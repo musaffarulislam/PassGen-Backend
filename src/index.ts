@@ -2,9 +2,11 @@ import express from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import cors from "cors";
-import * as router from "../userRouter";
+import router from "./routers/userRouter";
+import connectDb from "./config/database"
 
 dotenv.config();
+connectDb();
 
 const app = express();
 const port = process.env.PORT 
@@ -19,7 +21,7 @@ app.use(
 )
 
 app.use(express.json());
-app.use(express.uelencoded({extended : true}))
+app.use(express.urlencoded({extended : true}))
 app.use(morgan("dev"));
 
 app.use("/api/v1", router);
