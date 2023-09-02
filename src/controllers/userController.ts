@@ -8,7 +8,7 @@ import {
   savePassword,
   findPasswordsByUserId
 } from "../repositories/userRepositories";
-import { IUser } from "../../models/userSchema";
+import { IUser } from "../models/userSchema";
 
 
 

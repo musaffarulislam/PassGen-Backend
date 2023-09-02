@@ -1,5 +1,7 @@
 import express from 'express';
-import {registerUser,userLogin,savedPassword,fetchSavedData} from '../../controllers/userController'
+import {registerUser,userLogin,savedPassword,fetchSavedData} from '../controllers/userController'
+import verifyUserToken from '../middlewares/autherization'
+
 const router = express.Router()
 
 router.post('/signup',registerUser)
